@@ -9,3 +9,9 @@ export interface Order {
     longitude: number
     status: string
 }
+
+
+export interface Transport {
+    type: string
+    amount: number
+}

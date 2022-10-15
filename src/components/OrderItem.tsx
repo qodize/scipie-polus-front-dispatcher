@@ -5,7 +5,7 @@ interface OrderItemProps{
     order: Order;
 }
 
-const UserItem: FC<OrderItemProps> = ({order}) => {
+const OrderItem: FC<OrderItemProps> = ({order}) => {
     var d1 = new Date(order.start)
     var d2 = new Date(order.end)
     const order_string = d1 +' '+ d2 +' '+ order.transpport_type +' '+ order.status
@@ -17,4 +17,4 @@ const UserItem: FC<OrderItemProps> = ({order}) => {
     );
 };
 
-export default UserItem
+export default OrderItem

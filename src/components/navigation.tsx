@@ -7,6 +7,7 @@ export function Navigation() {
             <span className="font-bold">Полюс</span>
             <span>
                 <Link to="/orders">Заказы</Link>
+                <Link to="/transports">Транспорт</Link>
             </span>
         </nav>
     );

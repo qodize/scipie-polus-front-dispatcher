@@ -2,10 +2,10 @@ import React from 'react';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {AuthPage} from "./pages/AuthPage"
 import {OrdersPage} from "./pages/OrdersPage"
+import {TransportsPage} from "./pages/TransportsPage";
 import {Navigation} from "./components/navigation";
-
-
 import './App.css';
+
 
 function setPhone(phone: string){
     sessionStorage.setItem("phone", phone);
@@ -27,6 +27,7 @@ function App() {
           <Routes>
               {/*<Route path="/" element={<TransportPage/>}/>*/}
               <Route path="/orders" element={<OrdersPage/>}/>
+              <Route path="/transports" element={<TransportsPage/>}/>
           </Routes>
       </>
   );
