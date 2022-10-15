@@ -16,7 +16,7 @@ export function OrdersPage() {
             alert(e)
         }
     }
-    useEffect(() => {fetchOrders()});
+    useEffect(() => {fetchOrders()}, []);
 
     return (
         <div>
