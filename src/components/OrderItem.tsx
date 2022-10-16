@@ -6,14 +6,22 @@ interface OrderItemProps{
 }
 
 const OrderItem: FC<OrderItemProps> = ({order}) => {
-    var d1 = new Date(order.start)
-    var d2 = new Date(order.end)
-    const order_string = d1 +' '+ d2 +' '+ order.transpport_type +' '+ order.status
+    let statusStage = false
+    if(order.status === 'assigned'){
+        statusStage = true
+    }
+
+    const data_string = order.start +' '+ order.end
+    console.log({order})
     return (
-            <div className="bg-amber-500 w-[25vw] h-[25vw] hover:bg-amber-600 pt-4  border-2 rounded-2xl m-auto text-center pb-3">
-                {order_string}
-                {/*/!*<button onClick={buttonHandler} className="w-full h-full"></button>*!/*/}
+        <div className="font-bold w-[50vw] h-[100px] pt-3 pl-4  border-2 border-black border-opacity-40 rounded-2xl m-auto text-center flex flex-row">
+            <div className="text-left my-2">
+                <p>{order.transport_type}</p>
+                <p>{data_string}</p>
             </div>
+            {statusStage ? <div className="h-[50px] w-[150px] border-green-600 border-2 rounded-3xl ml-auto mr-[55px] mt-[10px] pt-2 text-center bg-green-600">{order.status}</div> :
+                <div className="h-[50px] w-[150px] border-red-500 border-2 rounded-3xl ml-auto mr-[55px] mt-[10px] pb-12 text-center bg-red-500">{order.status}</div>}
+        </div>
     );
 };
 

@@ -8,7 +8,7 @@ interface OrderListProps {
 
 const OrderList: FC<OrderListProps> = ({orders}) => {
     return (
-        <div className="grid grid-cols-1 gap-4">
+        <div className="mt-10 grid grid-cols-1 gap-4">
             {orders.map(order =>
             <OrderItem order={order}/>
             )}

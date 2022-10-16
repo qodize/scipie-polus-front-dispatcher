@@ -2,7 +2,7 @@ export interface Order {
     id: number
     user_phone: string
     driver_phone: string
-    transpport_type: string
+    transport_type: string
     start: Date
     end: Date
     latitude: number

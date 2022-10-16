@@ -4,7 +4,6 @@ import {AuthPage} from "./pages/AuthPage"
 import {OrdersPage} from "./pages/OrdersPage"
 import {TransportsPage} from "./pages/TransportsPage";
 import {Navigation} from "./components/navigation";
-import './App.css';
 
 
 function setPhone(phone: string){
@@ -26,7 +25,7 @@ function App() {
           <Navigation/>
           <Routes>
               {/*<Route path="/" element={<TransportPage/>}/>*/}
-              <Route path="/orders" element={<OrdersPage/>}/>
+              <Route path="/" element={<OrdersPage/>}/>
               <Route path="/transports" element={<TransportsPage/>}/>
           </Routes>
       </>

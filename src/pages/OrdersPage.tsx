@@ -29,16 +29,22 @@ export function OrdersPage() {
     if (filter == 'Текущие') {
         var now = new Date(Date.now());
         for (let i = 0; i < orders.length; i++) {
-            var d1: Date = new Date(orders[i].start)
-            var d2: Date = new Date(orders[i].end)
+            var d1: Date = new Date(new Date(orders[i].start).toString().slice(0, 28))
+            var d2: Date = new Date(new Date(orders[i].end).toString().slice(0, 28))
+            console.log(d1)
+            console.log(now)
+            console.log(d2)
+            console.log(d1 < now)
+            console.log(now < d2)
 
             if (d1 < now && now < d2) {
                 filteredOrders.push(orders[i]);
             }
         }
     } else if (filter == 'Конфликтные') {
+        console.log(orders)
         for (let i = 0; i < orders.length; i++) {
-            if (orders[i].status === 'Отменён') {
+            if (orders[i].status === 'cancelled') {
                 filteredOrders.push(orders[i]);
             }
         }

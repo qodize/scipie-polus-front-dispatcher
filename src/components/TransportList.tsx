@@ -8,10 +8,12 @@ interface OrderListProps {
 
 const TransportList: FC<OrderListProps> = ({transports}) => {
     return (
-        <div className="grid grid-cols-1 gap-4">
-            {transports.map(transport =>
-                <TransportItem transport={transport}/>
-            )}
+        <div className="mx-72 mb-10">
+            <div className="grid grid-cols-3 gap-4 place-content-center">
+                {transports.map(transport =>
+                    <TransportItem transport={transport}/>
+                )}
+            </div>
         </div>
     );
 }
